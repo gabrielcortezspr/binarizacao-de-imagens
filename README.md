@@ -1,0 +1,1 @@
+# binarizacao-de-imagens
