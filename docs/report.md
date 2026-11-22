@@ -179,9 +179,9 @@ Do ponto de vista computacional, a binarização depende de:
 
 O conjunto experimental envolve três fotografias capturadas manualmente:
 
-1. **Imagem de Pessoa:** Fotografia de uma pessoa (`pessoavelha.jpg`)
-2. **Imagem de Objeto:** Fotografia de um objeto (`fotoobjeto.jpg`)
-3. **Imagem de Documento:** Fotografia de um documento (`rgfoto.jpg`)
+1. **Imagem de Pessoa:** Fotografia de uma pessoa (`person.jpg`)
+2. **Imagem de Objeto:** Fotografia de um objeto (`object.jpg`)
+3. **Imagem de Documento:** Fotografia de um documento (`id-document.jpg`)
 
 Essas imagens foram selecionadas para representar diferentes cenários de aplicação da binarização, cada uma com características distintas de iluminação, contraste e conteúdo.
 
@@ -298,7 +298,7 @@ Dois métodos adaptativos foram aplicados:
 Todos os resultados foram organizados em uma estrutura de pastas hierárquica:
 
 ```
-resultados/
+results/
 ├── pessoa/
 │   ├── canais_rgb/
 │   ├── histogramas/
@@ -645,7 +645,7 @@ Bradski, G.; Kaehler, A. *Learning OpenCV: Computer Vision with the OpenCV Libra
 
 ### 7.1 Código-fonte Comentado
 
-O código-fonte completo, comentado e organizado para uso em relatório acadêmico, está disponível no arquivo `binarizacao_imagens.py`. O código inclui:
+O código-fonte completo, comentado e organizado para uso em relatório acadêmico, está disponível no arquivo `binarize.py`. O código inclui:
 
 - Estrutura modular com funções bem definidas
 - Comentários explicativos em português para cada seção
@@ -653,7 +653,7 @@ O código-fonte completo, comentado e organizado para uso em relatório acadêmi
 - Organização clara da saída em pastas estruturadas
 - Tratamento de erros e validações
 
-**Localização:** `binarizacao_imagens.py` na raiz do projeto
+**Localização:** `binarize.py` na raiz do projeto
 
 **Principais funcionalidades implementadas:**
 - Carregamento e análise técnica de imagens
@@ -665,31 +665,31 @@ O código-fonte completo, comentado e organizado para uso em relatório acadêmi
 
 ### 7.2 Imagens Utilizadas
 
-As três imagens originais utilizadas no experimento estão localizadas na pasta `fotos/`:
+As três imagens originais utilizadas no experimento estão localizadas na pasta `images/`:
 
-1. **Pessoa:** `fotos/pessoavelha.jpg`
+1. **Pessoa:** `images/person.jpg`
    - Dimensões: 1280 × 960 pixels
    - Formato: JPEG
    - Características: Gamut quente, tons avermelhados
 
-2. **Objeto:** `fotos/fotoobjeto.jpg`
+2. **Objeto:** `images/object.jpg`
    - Dimensões: 800 × 445 pixels
    - Formato: JPEG
    - Características: Gamut quente, alta intensidade no canal vermelho
 
-3. **Documento:** `fotos/rgfoto.jpg`
+3. **Documento:** `images/id-document.jpg`
    - Dimensões: 800 × 386 pixels
    - Formato: JPEG
    - Características: Gamut variado, tons claros e neutros
 
 ### 7.3 Gráficos e Figuras Geradas
 
-Todos os gráficos, figuras e imagens processadas foram organizados na pasta `resultados/` com a seguinte estrutura:
+Todos os gráficos, figuras e imagens processadas foram organizados na pasta `results/` com a seguinte estrutura:
 
 #### 7.3.1 Estrutura Completa de Arquivos
 
 ```
-resultados/
+results/
 ├── pessoa/
 │   ├── canais_rgb/
 │   │   ├── pessoa_canal_R.png

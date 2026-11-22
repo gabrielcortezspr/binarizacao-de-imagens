@@ -55,9 +55,9 @@ Este relatório apresenta os resultados obtidos através do processamento de tr�
 
 Todas as três imagens foram decompostas nos canais R (Vermelho), G (Verde) e B (Azul). Os arquivos gerados estão organizados em:
 
-- `resultados/[tipo]/canais_rgb/[tipo]_canal_R.png`
-- `resultados/[tipo]/canais_rgb/[tipo]_canal_G.png`
-- `resultados/[tipo]/canais_rgb/[tipo]_canal_B.png`
+- `results/[tipo]/canais_rgb/[tipo]_canal_R.png`
+- `results/[tipo]/canais_rgb/[tipo]_canal_G.png`
+- `results/[tipo]/canais_rgb/[tipo]_canal_B.png`
 
 **Observações:**
 - A decomposição permite analisar a contribuição individual de cada canal para a imagem final
@@ -72,7 +72,7 @@ Todas as três imagens foram decompostas nos canais R (Vermelho), G (Verde) e B 
 
 Os histogramas foram gerados para cada um dos três canais RGB de todas as imagens e salvos em:
 
-- `resultados/[tipo]/histogramas/[tipo]_histogramas_RGB.png`
+- `results/[tipo]/histogramas/[tipo]_histogramas_RGB.png`
 
 **Características Observadas:**
 
@@ -96,7 +96,7 @@ Os histogramas foram gerados para cada um dos três canais RGB de todas as image
 
 Todas as imagens foram convertidas para escala de cinza utilizando a função `cv2.cvtColor()` com o parâmetro `COLOR_BGR2GRAY`. As imagens em escala de cinza foram salvas em:
 
-- `resultados/[tipo]/[tipo]_escala_cinza.png`
+- `results/[tipo]/[tipo]_escala_cinza.png`
 
 **Propósito:** A conversão para escala de cinza é essencial para a binarização, pois reduz a informação de cor a uma única dimensão de intensidade, simplificando o cálculo do limiar.
 
@@ -208,7 +208,7 @@ O limiar de Otsu para o documento (T=199) é significativamente alto, o que é e
 ## 7. Estrutura de Arquivos Gerados
 
 ```
-resultados/
+results/
 ├── pessoa/
 │   ├── canais_rgb/
 │   │   ├── pessoa_canal_R.png
@@ -308,7 +308,7 @@ resultados/
 
 ## 10. Referências dos Arquivos
 
-Todos os arquivos gerados estão disponíveis na pasta `resultados/`, organizados por tipo de imagem e categoria de processamento. Os arquivos podem ser utilizados diretamente no relatório acadêmico como figuras e anexos.
+Todos os arquivos gerados estão disponíveis na pasta `results/`, organizados por tipo de imagem e categoria de processamento. Os arquivos podem ser utilizados diretamente no relatório acadêmico como figuras e anexos.
 
 ---
 

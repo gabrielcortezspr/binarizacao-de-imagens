@@ -23,7 +23,7 @@ def criar_estrutura_pastas():
     Cria a estrutura de pastas para organizar os resultados.
     
     Estrutura criada:
-    - resultados/
+    - results/
       - pessoa/
         - canais_rgb/
         - histogramas/
@@ -37,7 +37,7 @@ def criar_estrutura_pastas():
         - histogramas/
         - binarizadas/
     """
-    base_dir = Path("resultados")
+    base_dir = Path("results")
     tipos_imagem = ["pessoa", "objeto", "documento"]
     
     for tipo in tipos_imagem:
@@ -321,11 +321,11 @@ def main():
     base_dir = criar_estrutura_pastas()
     print(f"✓ Estrutura criada em: {base_dir}")
     
-    # Define os caminhos das imagens de entrada na pasta 'fotos'
+    # Define os caminhos das imagens de entrada na pasta 'images'
     imagens = {
-        "pessoa": "fotos/pessoavelha.jpg",
-        "objeto": "fotos/fotoobjeto.jpg",
-        "documento": "fotos/rgfoto.jpg"
+        "pessoa": "images/person.jpg",
+        "objeto": "images/object.jpg",
+        "documento": "images/id-document.jpg"
     }
     
     # Processa cada imagem
@@ -341,7 +341,7 @@ def main():
     print("="*60)
     print(f"\nTodos os resultados foram salvos em: {base_dir.absolute()}")
     print("\nEstrutura de saída:")
-    print("  resultados/")
+    print("  results/")
     print("    ├── pessoa/")
     print("    │   ├── canais_rgb/")
     print("    │   ├── histogramas/")
