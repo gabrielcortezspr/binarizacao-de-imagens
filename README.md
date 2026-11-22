@@ -1,46 +1,61 @@
-# Binarização de imagens com OpenCV
+# Image Binarization with OpenCV
 
-Comparação de técnicas de binarização sobre três fotografias com características diferentes
-(pessoa, objeto e documento). Trabalho da disciplina de Processamento Digital de Imagens
-(Engenharia da Computação, UEA/EST).
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.8-5C3EE8?logo=opencv&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-| Original (escala de cinza) | Limiar simples (127) | Otsu | Adaptativo gaussiano |
+Comparison of four thresholding techniques on three photographs with very different
+characteristics (a portrait, an object and an ID document). Built for the Digital Image
+Processing course of the Computer Engineering program at UEA/EST.
+
+| Grayscale input | Global threshold (127) | Otsu | Adaptive Gaussian |
 |---|---|---|---|
-| ![](resultados/documento/documento_escala_cinza.png) | ![](resultados/documento/binarizadas/documento_binaria_limiar_simples.png) | ![](resultados/documento/binarizadas/documento_binaria_otsu.png) | ![](resultados/documento/binarizadas/documento_binaria_adaptativa_gaussiana.png) |
-| ![](resultados/objeto/objeto_escala_cinza.png) | ![](resultados/objeto/binarizadas/objeto_binaria_limiar_simples.png) | ![](resultados/objeto/binarizadas/objeto_binaria_otsu.png) | ![](resultados/objeto/binarizadas/objeto_binaria_adaptativa_gaussiana.png) |
+| ![](results/documento/documento_escala_cinza.png) | ![](results/documento/binarizadas/documento_binaria_limiar_simples.png) | ![](results/documento/binarizadas/documento_binaria_otsu.png) | ![](results/documento/binarizadas/documento_binaria_adaptativa_gaussiana.png) |
+| ![](results/objeto/objeto_escala_cinza.png) | ![](results/objeto/binarizadas/objeto_binaria_limiar_simples.png) | ![](results/objeto/binarizadas/objeto_binaria_otsu.png) | ![](results/objeto/binarizadas/objeto_binaria_adaptativa_gaussiana.png) |
 
-## O que o script faz
+## Pipeline
 
-Para cada imagem em `fotos/`, `binarizacao_imagens.py`:
+For each image in `images/`, [`binarize.py`](binarize.py):
 
-1. Mostra as características técnicas (resolução, canais, gamut).
-2. Separa os canais R, G e B e gera o histograma de cada um.
-3. Converte para escala de cinza.
-4. Aplica quatro binarizações: limiar fixo, Otsu, adaptativa por média e adaptativa gaussiana.
+1. Prints its technical properties (resolution, channels, color gamut).
+2. Splits the R, G and B channels and plots a histogram for each one.
+3. Converts it to grayscale.
+4. Applies four binarization methods: fixed global threshold, Otsu, adaptive mean and
+   adaptive Gaussian.
 
-## Resultado principal
+## Key findings
 
-| Imagem | Limiar fixo | Limiar de Otsu | Leitura |
+| Image | Fixed threshold | Otsu threshold | Takeaway |
 |---|---|---|---|
-| Pessoa | 127 | 105 | Otsu desce o limiar para separar a pessoa do fundo |
-| Objeto | 127 | 117 | O limiar fixo já estava próximo do ideal |
-| Documento | 127 | 199 | Fundo claro exige limiar alto; o fixo perde o texto |
+| Portrait | 127 | 105 | Otsu lowers the threshold to separate the person from the background |
+| Object | 127 | 117 | The fixed value was already close to optimal |
+| ID document | 127 | 199 | A bright background needs a high threshold; the fixed one loses the text |
 
-Com iluminação irregular, o adaptativo é o único que preserva detalhe nas sombras.
+Under uneven lighting, adaptive thresholding is the only method that keeps detail in
+shadowed regions.
 
-## Como rodar
+## Getting started
 
-```sh
+```bash
 pip install -r requirements.txt
-python binarizacao_imagens.py   # lê fotos/ e grava tudo em resultados/
+python binarize.py   # reads images/ and writes everything to results/
 ```
 
-## Documentação
+## Project structure
 
-- [`docs/relatorio.md`](docs/relatorio.md): relatório completo (referencial teórico,
-  metodologia, discussão). Versão em PDF: [`docs/relatorio.pdf`](docs/relatorio.pdf).
-- [`docs/resultados.md`](docs/resultados.md): tabelas e análise por imagem.
+```
+├── binarize.py      # whole pipeline
+├── images/          # input photos (the ID card is a public specimen)
+├── results/         # generated channels, histograms, grayscale and binary images
+└── docs/            # full report (PDF + Markdown) and per-image analysis, in Portuguese
+```
 
-## Licença
+## Documentation
+
+- [`docs/report.pdf`](docs/report.pdf) / [`docs/report.md`](docs/report.md): full report
+  with theoretical background, methodology and discussion (Portuguese).
+- [`docs/results.md`](docs/results.md): tables and analysis for each image (Portuguese).
+
+## License
 
 [MIT](LICENSE)
